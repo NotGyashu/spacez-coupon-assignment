@@ -24,7 +24,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${lexendDeca.variable} font-sans antialiased`}>
-        {/* Fixed Layout Container */}
         <div className="flex flex-col h-screen">
           {/* Fixed Header */}
           <div className="flex-shrink-0">
@@ -37,9 +36,9 @@ export default function RootLayout({
           </main>
 
           {/* Fixed Footer */}
-          <div className="flex-shrink-0">
+         
             <Footer />
-          </div>
+          
         </div>
       </body>
     </html>

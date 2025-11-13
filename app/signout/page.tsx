@@ -4,7 +4,7 @@ import { useState } from 'react';
 import SignInPrompt from '../components/SignInPrompt';
 import TabNavigation from '../components/TabNavigation';
 import CouponCard from '../components/CouponCard';
-import GiftCardPlaceholder from '../components/GiftCard';
+import GiftCard from '../components/GiftCard';
 import PaymentOfferCard from '../components/PaymentOfferCard';
 
 const couponsData = [
@@ -60,7 +60,7 @@ export default function SignOutPage() {
       case 'Giftcards':
         return (
           <div className="p-4">
-            <GiftCardPlaceholder 
+            <GiftCard 
               data={{
                 giftCardImage: '/Group.svg',
                 maxAmount: '₹1000',
@@ -89,21 +89,23 @@ export default function SignOutPage() {
   };
 
   return (
-    <div className="flex flex-col h-full bg-white">
-      {/* Sign In Prompt - Fixed at top of scrollable area */}
-      <div className="flex-shrink-0 px-4 pt-4">
-        <SignInPrompt />
-      </div>
+  <div className="flex flex-col h-screen bg-white">
+    {/* Sign In Prompt - Fixed at top */}
+    <div className="flex-shrink-0 px-4 pt-4">
+      <SignInPrompt />
+    </div>
 
-      {/* Tabs - Sticky */}
-      <div className="flex-shrink-0 sticky top-0 z-10 bg-white px-4">
-        <TabNavigation onTabChange={setActiveTab} />
-      </div>
+    {/* Tabs - Sticky */}
+    <div className="flex-shrink-0 sticky top-0 z-10 bg-white px-4">
+      <TabNavigation onTabChange={setActiveTab} />
+    </div>
 
-      {/* Scrollable Content Area */}
-      <div className="flex-1 overflow-y-auto">
+    {/* Scrollable Content Area */}
+    <div className="flex-1 overflow-y-auto">
+      <div style={{ paddingBottom: 'calc(var(--footer-height) + 56px)' }}> {/* ✅ Responsive padding */}
         {renderContent()}
       </div>
     </div>
-  );
+  </div>
+);
 }

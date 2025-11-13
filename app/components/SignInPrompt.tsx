@@ -10,7 +10,7 @@ export default function SignInPrompt() {
   };
 
   return (
-    <div className="bg-white  p-4 sm:p-6 mb-4 sm:mb-6">
+    <div className="bg-white  px-4 sm:px-6">
       {/* Offers Heading */}
       <h2 className="text-[22px] sm:text-[28px] font-bold text-[#4B4E4B] mb-3 sm:mb-4 leading-tight">
         Offers
